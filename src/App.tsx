@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Buget from './components/Buget';
+import Buget from './pages/Buget';
+import Home from './pages/Home'
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Buget />} />
+          <Route path="/home" element={<Home />} ></Route>
         </Routes>
       </BrowserRouter>
     </>

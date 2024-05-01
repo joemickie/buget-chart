@@ -5,6 +5,7 @@ import {
     Image,
     Text,
 } from "@chakra-ui/react";
+import Footer from "../components/Footer";
 import Circle from "../assets/circle.svg";
 import Degree from "../assets/degree.svg";
 import Savings from "../assets/savings.svg";
@@ -12,11 +13,6 @@ import Battery from "../assets/battery.svg";
 import Naira from "../assets/naira.svg";
 import Dot from "../assets/dot.svg";
 import Food from "../assets/food.svg";
-import House from "../assets/house.svg";
-import Report from "../assets/report.svg";
-import Chat from "../assets/chat.svg";
-import Buget from "../assets/buget.svg";
-import Profile from "../assets/vector.svg";
 
 const Budget: React.FC = () => {
     return (
@@ -83,7 +79,7 @@ const Budget: React.FC = () => {
                     Category Breakdown
                 </Text>
             </Flex>
-            <Box className="flex flex-col gap-4 pt-5 pb-1.5 mt-2.5 w-full rounded-xl px-10">
+            <Box className="flex flex-col gap-4 pt-5 pb-26 mt-2.5 w-full rounded-xl px-10" style={{paddingBottom:"120px"}}>
                 <Flex className="" >
                     <Flex className="flex gap-2.5 text-sm tracking-normal">
                         <Image
@@ -123,57 +119,7 @@ const Budget: React.FC = () => {
                     </Flex>
                 </Flex>
             </Box>
-            <Box className="bg-white">
-                <Flex className="flex flex-col gap-0 justify-between  backdrop-blur-[50px] p-0">
-                    <Flex className="overflow-hidden relative gap-5 justify-between items-start px-8 py-5">
-                        {/* Home */}
-                        <div className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300">
-                            <img
-                                loading="lazy"
-                                src={House}
-                                className="gap-0 self-center w-full aspect-[1.54] fill-neutral-300"
-                            />
-                            <div className="gap-0 mt-3.5 slashed-zero">Home</div>
-                        </div>
-                        {/* Reports */}
-                        <div className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300">
-                            <img
-                                loading="lazy"
-                                src={Report}
-                                className="gap-0 self-center w-full aspect-[2] fill-neutral-300"
-                            />
-                            <div className="gap-0 mt-3.5 slashed-zero">Reports</div>
-                        </div>
-                        {/* Chat */}
-                        <div className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
-                            <img
-                                loading="lazy"
-                                src={Chat}
-                                className="gap-0 self-center w-20 aspect-[2] fill-gray-500"
-                            />
-                            <div className="gap-0 slashed-zero text-gray-500">Chat</div>
-                        </div>
-                        {/* Buget */}
-                        <div className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
-                            <img
-                                loading="lazy"
-                                src={Buget}
-                                className="gap-0 self-center w-5 aspect-[0.55] fill-sky-500"
-                            />
-                            <div className="gap-0 slashed-zero text-slate-900">Budget</div>
-                        </div>
-                        {/* Profile */}
-                        <div className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
-                            <img
-                                loading="lazy"
-                                src={Profile}
-                                className="gap-0 self-center w-full aspect-[1.64] fill-gray-500"
-                            />
-                            <div className="gap-0 mt-3.5 slashed-zero">Profile</div>
-                        </div>
-                    </Flex>
-                </Flex>
-            </Box>
+            <Footer />
         </Box>
     );
 };
