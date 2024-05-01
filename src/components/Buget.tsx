@@ -149,7 +149,7 @@ const Budget: React.FC = () => {
                             <img
                                 loading="lazy"
                                 src={Chat}
-                                className="gap-0 self-center w-full aspect-[0.75] fill-gray-500"
+                                className="gap-0 self-center w-20 aspect-[2] fill-gray-500"
                             />
                             <div className="gap-0 slashed-zero text-gray-500">Chat</div>
                         </div>
@@ -158,7 +158,7 @@ const Budget: React.FC = () => {
                             <img
                                 loading="lazy"
                                 src={Buget}
-                                className="gap-0 self-center w-5 aspect-[0.56] fill-sky-500"
+                                className="gap-0 self-center w-5 aspect-[0.55] fill-sky-500"
                             />
                             <div className="gap-0 slashed-zero text-slate-900">Budget</div>
                         </div>
