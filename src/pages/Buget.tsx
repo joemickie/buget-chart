@@ -14,6 +14,7 @@ import Naira from "../assets/naira.svg";
 import Dot from "../assets/dot.svg";
 import Food from "../assets/food.svg";
 
+
 const Budget: React.FC = () => {
     return (
         <Box className="flex flex-col gap-2.5 pt-4 mx-auto w-full bg-zinc-100 ">
@@ -79,7 +80,7 @@ const Budget: React.FC = () => {
                     Category Breakdown
                 </Text>
             </Flex>
-            <Box className="flex flex-col gap-4 pt-5 pb-26 mt-2.5 w-full rounded-xl px-10" style={{paddingBottom:"120px"}}>
+            <Box className="flex flex-col gap-4 pt-5 pb-26 mt-2.5 w-full rounded-xl px-10" style={{ paddingBottom: "120px" }}>
                 <Flex className="" >
                     <Flex className="flex gap-2.5 text-sm tracking-normal">
                         <Image

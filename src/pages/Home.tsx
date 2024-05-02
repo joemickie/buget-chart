@@ -3,8 +3,15 @@ import { Flex } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
+
+    const [activeComponent, setActiveComponent] = React.useState("component1");
+
+    const handleNavigation = (component: string) => {
+        setActiveComponent(component);
+    };
+
     return (
-        <div className="flex flex-col gap-0 pt-4 mx-auto w-full bg-zinc-50 max-w-[1920px]">
+        <div className="flex flex-col gap-0 pt-4 mx-auto w-full bg-zinc-50 ">
             {/* Budget */}
             <div className="flex flex-col gap-2.5 px-6 w-full text-3xl font-bold tracking-tighter text-slate-900">
                 <div className="flex gap-5 justify-between px-0.5 text-base font-semibold tracking-normal leading-5 text-center text-black whitespace-nowrap">
@@ -29,7 +36,7 @@ const Home: React.FC = () => {
                 </div>
             </div>
             {/* Expenses and Category Overview */}
-            <Flex className="z-10 flex-col gap-3 items-end pt-5 pr-8 pb-20 pl-20 mt-5 w-full text-xs tracking-normal leading-4 text-black rounded-md shadow-sm backdrop-blur-[125px] bg-zinc-50" style={{paddingBottom:"120px"}}>
+            <Flex className="z-10 flex-col gap-3 items-end pt-5 pr-8 pb-20 pl-20 mt-5 w-full text-xs tracking-normal leading-4 text-black rounded-md shadow-sm backdrop-blur-[125px] bg-zinc-50" style={{ paddingBottom: "120px" }}>
                 {/* Expenses overview */}
 
                 <img
@@ -57,6 +64,7 @@ const Home: React.FC = () => {
             </Flex>
             {/* Profile */}
             <Footer />
+
         </div>
     );
 };
