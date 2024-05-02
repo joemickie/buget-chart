@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Flex } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 
 import House from "../assets/house.svg";
@@ -12,10 +12,11 @@ import Profile from "../assets/vector.svg";
 
 const Footer: React.FC = () => {
 
-    const navigate = useNavigate(); // Initialize the useNavigate hook
+    const [activePage, setActivePage] = React.useState(""); // State to track active page
 
+    // Function to handle navigation click and update active page
     const handleNavigation = (path: string) => {
-        navigate(path); // Navigate to the specified path
+        setActivePage(path);
     };
 
     return (
@@ -23,50 +24,60 @@ const Footer: React.FC = () => {
             <Flex className="flex flex-col gap-0 justify-between backdrop-blur-[50px] p-0">
                 <Flex className="overflow-hidden relative gap-5 justify-between items-start px-8 py-5">
                     {/* Home */}
-                    <div onClick={() => handleNavigation("/")}  className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300" >
+                    <NavLink to="/" onClick={() => handleNavigation("")} className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300" style={{
+                        color: window.location.pathname === "/" ? 'black' : 'neutral-300'
+                    }} >
                         <img
                             loading="lazy"
                             src={House}
                             className="gap-0 self-center w-full aspect-[1.54] fill-neutral-300"
                         />
                         <div className="gap-0 mt-3.5 slashed-zero">Home</div>
-                    </div>
+                    </NavLink>
                     {/* Reports */}
-                    <div className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300">
+                    <NavLink to="/report" onClick={() => handleNavigation("report")} className="flex relative flex-col gap-3.5 text-xs text-center whitespace-nowrap font-[450] text-neutral-300" style={{
+                        color: window.location.pathname === "/report" ? 'black' : 'neutral-300'
+                    }}>
                         <img
                             loading="lazy"
                             src={Report}
                             className="gap-0 self-center w-full aspect-[2] fill-neutral-300"
                         />
                         <div className="gap-0 mt-3.5 slashed-zero">Reports</div>
-                    </div>
+                    </NavLink>
                     {/* Chat */}
-                    <div className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
+                    <NavLink  to="/chat" onClick={() => handleNavigation("chat")} className="flex relative flex-col gap-3.5 text-xs text-center text-neutral-300 whitespace-nowrap font-[450]" style={{
+                        color: window.location.pathname === "/chat" ? 'black' : 'neutral-300'
+                    }}>
                         <img
                             loading="lazy"
                             src={Chat}
-                            className="gap-0 self-center w-20 aspect-[2] fill-gray-500"
+                            className="gap-0 self-center w-20 aspect-[2]"
                         />
-                        <div className="gap-0 slashed-zero text-gray-500">Chat</div>
-                    </div>
+                        <div className="gap-0 slashed-zero">Chat</div>
+                    </NavLink>
                     {/* Budget */}
-                    <div onClick={() => handleNavigation("/buget")} className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
+                    <NavLink to="/budget" onClick={() => handleNavigation("budget")} className="flex relative flex-col gap-3.5 text-xs text-center text-neutral-300 whitespace-nowrap font-[450]" style={{
+                        color: window.location.pathname === "/budget" ? 'black' : 'neutral-300'
+                    }}>
                         <img
                             loading="lazy"
                             src={Buget}
                             className="gap-0 self-center w-5 aspect-[0.55] "
                         />
-                        <div className="gap-0 slashed-zero text-slate-900">Budget</div>
-                    </div>
+                        <div className="gap-0 slashed-zero ">Budget</div>
+                    </NavLink>
                     {/* Profile */}
-                    <div className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]">
+                    <NavLink to="/profile" onClick={() => handleNavigation("profile")} className="flex relative flex-col gap-3.5 text-xs text-center text-gray-500 whitespace-nowrap font-[450]" style={{
+                        color: window.location.pathname === "/profile" ? 'black' : 'neutral-300'
+                    }}>
                         <img
                             loading="lazy"
                             src={Profile}
                             className="gap-0 self-center w-full aspect-[1.64] fill-gray-500"
                         />
                         <div className="gap-0 mt-3.5 slashed-zero">Profile</div>
-                    </div>
+                    </NavLink>
                 </Flex>
             </Flex>
         </Box>

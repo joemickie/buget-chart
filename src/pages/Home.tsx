@@ -3,13 +3,6 @@ import { Flex } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
-
-    const [activeComponent, setActiveComponent] = React.useState("component1");
-
-    const handleNavigation = (component: string) => {
-        setActiveComponent(component);
-    };
-
     return (
         <div className="flex flex-col gap-0 pt-4 mx-auto w-full bg-zinc-50 ">
             {/* Budget */}
